@@ -1,4 +1,4 @@
 # created by virtualenv automatically
 node_modules
-virtualenv
+venv~
 migrations
