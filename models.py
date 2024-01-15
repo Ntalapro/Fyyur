@@ -6,6 +6,7 @@ from flask_migrate import Migrate
 from sqlalchemy import func
 
 
+
 #I really need a review on this one, I am not sure if this is a good way of seperating models from main
 #plus when  I don't initialize all of these here and just import them from app.js I get circular import when
 #then import the modules to app.py, SO PLEASE SOME ADVICE WOULD do here
