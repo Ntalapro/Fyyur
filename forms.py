@@ -27,6 +27,7 @@ class VenueForm(FlaskForm):
         match = re.search(us_phone_num, phone.data)
         if not match:
             raise ValidationError('Error, phone number must be in format xxx-xxx-xxxx')
+            flash('Error, phone number must be in format xxx-xxx-xxxx')
 
     name = StringField(
         'name', validators=[DataRequired()]

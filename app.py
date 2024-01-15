@@ -132,7 +132,7 @@ def create_venue_form():
   form = VenueForm()
   return render_template('forms/new_venue.html', form=form)
 
-@app.route('/venues/create', methods=['GET','POST'])
+@app.route('/venues/create', methods=['POST'])
 def create_venue_submission():
   form = VenueForm()
   if form.validate_on_submit():
@@ -147,7 +147,6 @@ def create_venue_submission():
               flash('Venue ' + request.form['name'] + ' was successfully listed!')
             except:
                 db.session.rollback()
-                #flash(sys.exc_info())
                 flash('An error occurred. '+ request.form['name'] +' Venue could not be listed.')
                 return render_template('forms/new_venue.html',form=form)
             finally:
